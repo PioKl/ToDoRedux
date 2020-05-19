@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { deleteTask } from "../actions/task.actions";
 import { completeTask } from "../actions/task.actions";
 const Task = ({ task, deleteTask, completeTask }) => {
-    const { title, description, id, completed } = task;
+    const { title, description, category, id, completed } = task;
 
     const handleCheck = () => {
         completeTask(id)
@@ -15,6 +15,7 @@ const Task = ({ task, deleteTask, completeTask }) => {
         <div>
             <li style={{ textDecoration: completed ? "line-through" : "none" }} onClick={handleCheck}>{title}</li>
             <p>{description}</p>
+            <p>{category}</p>
             <button onClick={handleDelete}>X</button>
         </div>
 
