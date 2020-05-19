@@ -8,6 +8,7 @@ const tasks = (state = [], action) => {
                     id: action.id,
                     title: action.title,
                     description: action.description,
+                    category: action.category,
                     completed: action.completed,
                 }
             ];
@@ -23,8 +24,8 @@ const tasks = (state = [], action) => {
                     completed: task.id === action.id ? !task.completed : task.completed
                 }
             })
-        case "SEARCH_TASK":
-            return state.filter(task => task.title.includes(action.title))
+        /*         case "SEARCH_TASK":
+                    return state.filter(task => task.title.includes(action.title)) */
         default:
             return state;
     }
