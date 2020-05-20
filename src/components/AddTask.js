@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { addTask } from "../actions/task.actions";
 
-const AddTask = ({ addTask, searchTask }) => {
+const AddTask = ({ addTask }) => {
     const normal = "normal";
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
