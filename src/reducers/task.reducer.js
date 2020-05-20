@@ -24,8 +24,6 @@ const tasks = (state = [], action) => {
                     completed: task.id === action.id ? !task.completed : task.completed
                 }
             })
-        /*         case "SEARCH_TASK":
-                    return state.filter(task => task.title.includes(action.title)) */
         default:
             return state;
     }

@@ -18,16 +18,3 @@ export const completeTask = (id) => ({
     type: "COMPLETE_TASK",
     id,
 })
-
-
-//do 2 sposobu
-export const AVAILABLE_FILTERS = {
-    SHOW_ALL: "SHOW_ALL",
-    SHOW_COMPLETED: "SHOW_COMPLETED",
-    SHOW_NOTCOMPLETED: "SHOW_NOTCOMPLETED",
-}
-
-/* export const searchTask = (title) => ({
-    type: "SEARCH_TASK",
-    title,
-}) */
