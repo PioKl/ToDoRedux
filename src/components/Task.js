@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteTask } from "../actions/task.actions";
-import { completeTask } from "../actions/task.actions";
+import { deleteTask, completeTask } from "../actions/task.actions";
 const Task = ({ task, deleteTask, completeTask }) => {
     const { title, description, category, id, completed } = task;
 
@@ -27,5 +26,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(Task);
-
-//export default Task;
