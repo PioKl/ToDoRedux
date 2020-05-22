@@ -1,8 +1,10 @@
-let nextTask = 0;
+import uuid from "uuid/dist/v1";
+//let nextTask = 0;
 
 export const addTask = (title, description, category) => ({
     type: "ADD_TASK",
-    id: nextTask++,
+    //id: nextTask++,
+    id: uuid(),
     title: title,
     description: description,
     category: category,
