@@ -15,57 +15,53 @@ const TaskList = ({ tasks }) => {
 }
 
 const filterTasks = (tasks, filters, filterByCategory, searchs) => {
-    if (filters === "SHOW_ALL") {
-        if (filterByCategory === "normal") {
-            return tasks.filter(task => task.category === "normal" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "shooping") {
-            return tasks.filter(task => task.category === "shooping" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "food") {
-            return tasks.filter(task => task.category === "food" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "training") {
-            return tasks.filter(task => task.category === "training" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else {
-            return tasks.filter(task => task && task.title.toLowerCase().includes(searchs.toLowerCase()));
-        }
-    }
-    else if (filters === "SHOW_NOTCOMPLETED") {
-        if (filterByCategory === "allCategories") {
-            return tasks.filter(task => task.completed === false && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "normal") {
-            return tasks.filter(task => task.completed === false && task.category === "normal" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "shooping") {
-            return tasks.filter(task => task.completed === false && task.category === "shooping" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "food") {
-            return tasks.filter(task => task.completed === false && task.category === "food" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "training") {
-            return tasks.filter(task => task.completed === false && task.category === "training" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-    }
-
-    else if (filters === "SHOW_COMPLETED") {
-        if (filterByCategory === "allCategories") {
-            return tasks.filter(task => task.completed === true && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "normal") {
-            return tasks.filter(task => task.completed === true && task.category === "normal" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "shooping") {
-            return tasks.filter(task => task.completed === true && task.category === "shooping" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "food") {
-            return tasks.filter(task => task.completed === true && task.category === "food" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
-        else if (filterByCategory === "training") {
-            return tasks.filter(task => task.completed === true && task.category === "training" && task.title.toLowerCase().includes(searchs.toLowerCase()))
-        }
+    switch (filters) {
+        case "SHOW_ALL":
+            switch (filterByCategory) {
+                case "allCategories":
+                    return tasks.filter(task => task && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "normal":
+                    return tasks.filter(task => task.category === "normal" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "shopping":
+                    return tasks.filter(task => task.category === "shopping" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "food":
+                    return tasks.filter(task => task.category === "food" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "training":
+                    return tasks.filter(task => task.category === "training" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                default: return tasks;
+            }
+        case "SHOW_NOTCOMPLETED":
+            switch (filterByCategory) {
+                case "allCategories":
+                    return tasks.filter(task => task.completed === false && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "normal":
+                    return tasks.filter(task => task.completed === false && task.category === "normal" && task.title.toLowerCase().includes(searchs.toLowerCase()))
+                case "shopping":
+                    return tasks.filter(task => task.completed === false && task.category === "shopping" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "food":
+                    return tasks.filter(task => task.completed === false && task.category === "food" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "training":
+                    return tasks.filter(task => task.completed === false && task.category === "training" && task.title.toLowerCase().includes(searchs.toLowerCase()))
+                default:
+                    return tasks;
+            }
+        case "SHOW_COMPLETED":
+            switch (filterByCategory) {
+                case "allCategories":
+                    return tasks.filter(task => task.completed === true && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "normal":
+                    return tasks.filter(task => task.completed === true && task.category === "normal" && task.title.toLowerCase().includes(searchs.toLowerCase()))
+                case "shopping":
+                    return tasks.filter(task => task.completed === true && task.category === "shopping" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "food":
+                    return tasks.filter(task => task.completed === true && task.category === "food" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                case "training":
+                    return tasks.filter(task => task.completed === true && task.category === "training" && task.title.toLowerCase().includes(searchs.toLowerCase()));
+                default:
+                    return tasks;
+            }
+        default:
+            return tasks
     }
 }
 
