@@ -40,7 +40,7 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
             <select id="categories">
                 <option onClick={handleCategory} defaultValue="selected" value={allCategories}>All Categories</option>
                 <option onClick={handleCategory} value="normal">Normal</option>
-                <option onClick={handleCategory} value="shooping">Shooping</option>
+                <option onClick={handleCategory} value="shopping">Shopping</option>
                 <option onClick={handleCategory} value="food">Food</option>
                 <option onClick={handleCategory} value="training">Training</option>
             </select>
