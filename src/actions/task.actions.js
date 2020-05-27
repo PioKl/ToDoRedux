@@ -27,8 +27,10 @@ export const editTask = (id) => ({
     id,
 })
 
-export const saveEditTask = (id, editedTitle) => ({
+export const saveEditTask = (id, editedTitle, editedDescription, editedCategory) => ({
     type: "SAVE_EDIT_TASK",
     id,
     title: editedTitle,
+    description: editedDescription,
+    category: editedCategory,
 })
