@@ -34,6 +34,8 @@ const tasks = (state = [], action) => {
                     return {
                         ...task,
                         title: action.title,
+                        description: action.description,
+                        category: action.category,
                         edited: false,
                     }
                 }
