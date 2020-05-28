@@ -35,7 +35,7 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
 
     return (
         <>
-            {isEdited ? null : <div>
+            {/* {isEdited ? null :  */}<div style={{ display: isEdited ? 'none' : 'inline' }}>
                 <input type="text" value={search} onChange={handleSearch} />
                 <button value="SHOW_ALL" disabled={filters === "SHOW_ALL" ? true : false} onClick={handleAll}>All</button>
                 <button value="SHOW_NOTCOMPLETED" disabled={filters === "SHOW_NOTCOMPLETED" ? true : false} onClick={handleNotCompleted}>Not Completed</button>
@@ -47,7 +47,7 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
                     <option onClick={handleCategory} value="food">Food</option>
                     <option onClick={handleCategory} value="training">Training</option>
                 </select>
-            </div>}
+            </div>{/* } */}
 
         </>
     );
