@@ -1,0 +1,58 @@
+.filters {
+    &__search-input {
+        width: 100%;
+    }
+
+    &__showing-filters {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__showing-button {
+        //width: 33.3%;
+        flex: 1 1 auto;
+    }
+
+    /* ==============================
+        Choose/Show Category Filters
+    =================================*/
+    &__category-filters {
+        text-align: center;
+    }
+
+    &__category-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__category-item {
+        flex: 1 1 auto;
+        background-color: orange;
+        border: 1px solid black;
+    }
+}
+
+/* ==============================
+Choose/Show Category Filters
+=================================*/
+.active {
+    color: red;
+}
+
+/* .filters__category-filters {
+    text-align: center;
+}
+
+.filters__category-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.filters__category-item {
+    flex: 1 1 auto;
+} */
