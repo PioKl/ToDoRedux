@@ -3,22 +3,28 @@ import { connect } from 'react-redux';
 import Task from './Task';
 import TaskEdited from './TaskEdited';
 import { EditContext } from '../contexts/EditContext';
+import { CreateTaskContext } from '../contexts/CreateTaskContext';
 const TaskList = ({ tasks }) => {
     const { isEdited } = useContext(EditContext);
+    const { isTaskCreated } = useContext(CreateTaskContext);
     return (
-        <div>
-            <ul>
-                {tasks.map(task => (
-                    <div key={task.id}>
-                        {/* isEdited jest po to aby zlikwidowac problem pojawienia sie razem panelu zapisu i tasków, wówczas gdy użytkownik będąc w panelu edycji odświeży stronę, a nie wykorzysta opcji zapisz */}
-                        {task.edited && isEdited ?
-                            <TaskEdited key={task.id} task={task} />
-                            :
-                            <Task key={task.id} task={task} />}
-                    </div>
-                ))}
-            </ul>
-        </div>
+        <>
+            {isTaskCreated ? null :
+                <div>
+                    <ul>
+                        {tasks.map(task => (
+                            <div key={task.id}>
+                                {/* isEdited jest po to aby zlikwidowac problem pojawienia sie razem panelu zapisu i tasków, wówczas gdy użytkownik będąc w panelu edycji odświeży stronę, a nie wykorzysta opcji zapisz */}
+                                {task.edited && isEdited ?
+                                    <TaskEdited key={task.id} task={task} />
+                                    :
+                                    <Task key={task.id} task={task} />}
+                            </div>
+                        ))}
+                    </ul>
+                </div>
+            }
+        </>
     );
 }
 
