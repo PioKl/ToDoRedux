@@ -1,0 +1,58 @@
+@mixin iconSettings {
+    font-weight: 900;
+    font-family: 'Font Awesome 5 Free';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.task {
+
+    &__circle {
+        //color: red;
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        top: 25%;
+        left: -1.6rem;
+        transform: translateY(-25%);
+        background-color: red;
+        border-radius: 10rem;
+        text-align: center;
+
+        &--completed {
+            background-color: green;
+        }
+
+        &--normal {
+            &::after {
+                content: '\f328';
+                @include iconSettings();
+            }
+
+        }
+
+        &--shopping {
+            &::after {
+                content: '\f07a';
+                @include iconSettings();
+            }
+        }
+
+        &--food {
+            &::after {
+                content: '\f2e7';
+                @include iconSettings();
+            }
+        }
+
+        &--training {
+            &::after {
+                content: '\f44b';
+                @include iconSettings();
+            }
+        }
+    }
+}
