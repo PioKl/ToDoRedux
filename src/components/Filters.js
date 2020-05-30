@@ -67,7 +67,7 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
                     </select>
                 </div> */}
                 <div className="filters__category-filters">
-                    <span className="filters__category-title" onClick={handleOpenCategoriesFilter}>Show Categories: {categoryToFilter === "allCategories" ? "All Categories" : categoryToFilter[0].toUpperCase() + categoryToFilter.slice(1)}</span>
+                    <button className={`filters__category-title ${showCategoryFilters ? "filters__category-title--active" : "filters__category-title--inActive"}`} onClick={handleOpenCategoriesFilter}>Show Categories: {categoryToFilter === "allCategories" ? "All Categories" : categoryToFilter[0].toUpperCase() + categoryToFilter.slice(1)}</button>
                     <ul style={{ display: showCategoryFilters ? 'flex' : 'none' }} className="filters__category-list">
                         <li onClick={handleCategory} className={`filters__category-item filters__category-item--allCategories
                         ${categoryToFilter === "allCategories" ? "active" : "non-active"}`} value="allCategories">All Categories</li>
@@ -81,25 +81,6 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
                         ${categoryToFilter === "training" ? "active" : "non-active"}`} value="training">Training</li>
                     </ul>
                 </div>
-                {/*                 <div className="filter__selectPanel">
-                        <NavLink to="./">
-                            <span onClick={this.handleFilterRegion} className={this.state.filterActive ? "filter__chooseRegion filter__chooseRegion--caretUp" : "filter__chooseRegion filter__chooseRegion--caretDown"}>{this.state.regionChoosed ? this.state.optionUpper : "Filter by Region"}</span>
-                            <ul className={this.state.filterActive ? "filter__dropdown visible" : "filter__dropdown"}>
-                                <li className="filter__dropdown-item filter__dropdown-item--all" value="all"
-                                    onClick={this.handleChangeRegion}>All</li>
-                                <li className="filter__dropdown-item filter__dropdown-item--africa" value="africa"
-                                    onClick={this.handleChangeRegion}>Africa</li>
-                                <li className="filter__dropdown-item filter__dropdown-item--americas" value="americas"
-                                    onClick={this.handleChangeRegion}>Americas</li>
-                                <li className="filter__dropdown-item filter__dropdown-item--asia" value="asia"
-                                    onClick={this.handleChangeRegion}>Asia</li>
-                                <li className="filter__dropdown-item filter__dropdown-item--europe" value="europe"
-                                    onClick={this.handleChangeRegion}>Europe</li>
-                                <li className="filter__dropdown-item filter__dropdown-item--oceania" value="oceania"
-                                    onClick={this.handleChangeRegion}>Oceania</li>
-                            </ul>
-                        </NavLink>
-                    </div> */}
             </div>{/* } */}
 
         </>
