@@ -1,3 +1,11 @@
+/* Colors */
+$standardGrey: rgb(121, 114, 114);
+$cyanOne: #00c9c4;
+$cyanTwo: rgb(3, 255, 255);
+$darkSeaBlue: #2f4858;
+$darkSeaBlue2: #2f4858a1;
+$greyWithPurple: #595564;
+
 /* ===============
 Default properties
 ==================*/
@@ -22,4 +30,5 @@ html {
 body {
     background-color: rgba(0, 0, 0, 0.726);
     color: white;
+    padding: .5rem;
 }
