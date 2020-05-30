@@ -1,14 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { connect } from "react-redux";
 import { addTask } from "../actions/task.actions";
 import { EditContext } from '../contexts/EditContext';
 import { CreateTaskContext } from '../contexts/CreateTaskContext';
+import "../style/AddTask.scss";
 
 const AddTask = ({ addTask }) => {
     //const normal = "normal";
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState("normal");
+    const [scroll, setScroll] = useState(false);
     const { isEdited } = useContext(EditContext);
     const { isTaskCreated, setIsTaskCreated } = useContext(CreateTaskContext);
 
@@ -30,6 +32,23 @@ const AddTask = ({ addTask }) => {
     const handleCancel = () => {
         setIsTaskCreated(false);
     }
+
+    const scrollCheck = () => {
+        //console.log(scroll)
+        //console.log(window.scrollY)
+        const beginScroll = window.scrollY < 80;
+        if (beginScroll === false) {
+            setScroll(true);
+        } else {
+            setScroll(false);
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', scrollCheck, false);
+        return () => {
+            window.removeEventListener("scroll", scrollCheck, false);
+        };
+    });
     return (
         <>
             {isEdited ? null :
@@ -49,9 +68,12 @@ const AddTask = ({ addTask }) => {
                         <button onClick={handleCancel}>Cancel</button>
                     </div>
                         :
-                        <div>
-                            <button onClick={handleCreateTask}>Create New Task</button>
+                        <div className="create-newTask">
+                            <button title="Create New Task" className={`create-newTask__button ${scroll ? "create-newTask__button--scroll" : "create-newTask__button--standard"}`} onClick={handleCreateTask}>{scroll ? <i className="fas fa-plus create-newTask__button--plusIcon"></i> : "Create New Task"}</button>
                         </div>}
+                    {/*                         <div className={scroll ? 'scroll' : null} onClick={() => { window.scrollTo(0, 0) }}>
+                                <i className={scroll ? "fas fa-arrow-up scroll__arrowUp" : null}></i>
+                            </div> */}
                 </>
             }
 
