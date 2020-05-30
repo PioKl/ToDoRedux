@@ -1,0 +1,19 @@
+.tasks {
+    font-size: 1.4rem;
+
+    &__list {
+        padding: 1rem 0 1rem 2rem;
+
+        /*         :last-child {
+            padding-bottom: 0
+        } */
+    }
+
+    &__itemContainer {
+        position: relative; //do circle potrzebne
+        padding-left: 3rem;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        border-left: .1rem solid red;
+    }
+}
