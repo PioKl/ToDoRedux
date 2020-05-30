@@ -1,17 +1,57 @@
+//moze #595564 zamiast rgb(121, 114, 114)
+//paleta https://mycolor.space/?hex=%23797272&sub=1
+/* Colors */
+$standardGrey: rgb(121, 114, 114);
+$cyanOne: #00c9c4;
+$cyanTwo: rgb(3, 255, 255);
+$darkSeaBlue: #2f4858;
+$darkSeaBlue2: #2f4858a1;
+$greyWithPurple: #595564;
+
 .filters {
+
+    /* ===========================
+             FILTER SERACH
+    ==============================*/
     &__search-input {
-        width: 100%;
+        width: 100%; //+
+        background-color: black; //+
+        border: .1rem solid rgb(121, 114, 114); //+
+        color: inherit;
+        padding: .2rem;
+        font-size: 1.4rem; //+
+
+        &:focus {
+            border-color: #00c9c4;
+            //border-bottom: .2rem solid #00c9c4;
+        }
     }
 
+    /* ===========================
+             FILTER SHOW TASKS
+    ==============================*/
+
     &__showing-filters {
+        padding: .2rem 0 .2rem 0;
         width: 100%;
         display: flex;
         justify-content: center;
     }
 
     &__showing-button {
-        //width: 33.3%;
         flex: 1 1 auto;
+        background-color: black;
+        color: inherit;
+        border: .1rem solid rgb(121, 114, 114);
+        padding: .2rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+
+        &:disabled {
+            background-color: #2f4858;
+            color: white;
+            font-weight: 700;
+        }
     }
 
     /* ==============================
@@ -19,6 +59,54 @@
     =================================*/
     &__category-filters {
         text-align: center;
+        font-size: 1.4rem;
+        border: .1rem solid rgb(121, 114, 114);
+        border-bottom: .15rem solid rgb(121, 114, 114);
+        padding-top: .2rem;
+        padding-bottom: .4rem;
+        //margin-bottom: 1rem;
+        background-color: black;
+    }
+
+    &__category-title {
+        cursor: pointer;
+        width: 100%;
+        background-color: black;
+        color: white;
+        border: 0;
+        font-size: inherit;
+
+        &--active {
+            font-weight: 700;
+
+            &::after {
+                content: '\f0d8';
+                font-weight: 900;
+                font-family: 'Font Awesome 5 Free';
+                position: relative;
+                left: 5%;
+                //padding-left: 1rem;
+            }
+        }
+
+        &--inActive {
+            &::after {
+                content: '\f0d7';
+                font-weight: 900;
+                font-family: 'Font Awesome 5 Free';
+                position: relative;
+                left: 5%;
+                //padding-left: 1rem;
+            }
+        }
+
+        /* background-color: black;
+        border: 0;
+        color: inherit;
+
+        &:focus {
+            font-weight: 700;
+        } */
     }
 
     &__category-list {
@@ -26,12 +114,27 @@
         flex-wrap: wrap;
         width: 100%;
         justify-content: space-between;
+        padding-top: .5rem;
+        margin-bottom: -.4rem;
+
+        /*         :last-child {
+            border-right: 0;
+        } */
     }
 
     &__category-item {
         flex: 1 1 auto;
-        background-color: orange;
-        border: 1px solid black;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        //background-color: orange;
+        background-color: black;
+        border-top: .1rem solid rgb(121, 114, 114);
+
+        //border-right: .19rem dashed red;
+        &:hover {
+            background-color: #2f4858a1;
+            font-weight: 700;
+        }
     }
 }
 
@@ -39,7 +142,10 @@
 Choose/Show Category Filters
 =================================*/
 .active {
-    color: red;
+    //color: red;
+    font-weight: 700;
+    background-color: #2f4858;
+    border-bottom: .2rem solid rgb(3, 255, 255); //lub #00c9c4
 }
 
 /* .filters__category-filters {
