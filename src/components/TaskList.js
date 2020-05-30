@@ -4,26 +4,52 @@ import Task from './Task';
 import TaskEdited from './TaskEdited';
 import { EditContext } from '../contexts/EditContext';
 import { CreateTaskContext } from '../contexts/CreateTaskContext';
+import "../style/TaskList.scss";
 const TaskList = ({ tasks }) => {
     const { isEdited } = useContext(EditContext);
     const { isTaskCreated } = useContext(CreateTaskContext);
     return (
         <>
+
+
             {isTaskCreated ? null :
-                <div>
-                    <ul>
+                <div className="tasks">
+                    {isEdited ?
+                        <>
+                            {/* isEdited jest po to aby zlikwidowac problem pojawienia sie razem panelu zapisu i tasków, wówczas gdy użytkownik będąc w panelu edycji odświeży stronę, a nie wykorzysta opcji zapisz */}
+                            {tasks.map(task => (
+                                <div className="tasks_itemEditContainer" key={task.id}>
+                                    {task.edited && <TaskEdited key={task.id} task={task} />}
+                                </div>
+                            ))}
+                        </>
+                        :
+                        <ul className="tasks__list">
+                            {tasks.map(task => (
+                                <div className="tasks__itemContainer" key={task.id}>
+                                    <Task key={task.id} task={task} />
+                                </div>
+                            ))}
+                        </ul>
+                    }
+                </div>
+            }
+
+            {/*             {isTaskCreated ? null :
+                <div className="tasks">
+                    <ul className="tasks__list">
                         {tasks.map(task => (
-                            <div key={task.id}>
-                                {/* isEdited jest po to aby zlikwidowac problem pojawienia sie razem panelu zapisu i tasków, wówczas gdy użytkownik będąc w panelu edycji odświeży stronę, a nie wykorzysta opcji zapisz */}
-                                {task.edited && isEdited ?
+                            <div className={isEdited ? "tasks_itemEditContainer" : "tasks__itemContainer"} key={task.id}> */}
+            {/* isEdited jest po to aby zlikwidowac problem pojawienia sie razem panelu zapisu i tasków, wówczas gdy użytkownik będąc w panelu edycji odświeży stronę, a nie wykorzysta opcji zapisz */}
+            {/*                                 {task.edited && isEdited ?
                                     <TaskEdited key={task.id} task={task} />
                                     :
-                                    <Task key={task.id} task={task} />}
-                            </div>
+                                    <Task key={task.id} task={task} />} */}
+            {/*                             </div>
                         ))}
                     </ul>
                 </div>
-            }
+            } */}
         </>
     );
 }
