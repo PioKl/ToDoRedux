@@ -1,3 +1,5 @@
+@import '../style/App.scss';
+
 @mixin iconSettings {
     font-weight: 900;
     font-family: 'Font Awesome 5 Free';
@@ -9,7 +11,16 @@
 }
 
 .task {
+    &__item {
+        width: 90%;
+        background-color: black;
+        border-radius: .5rem;
+        padding: 1rem 1rem 1rem 1rem;
+    }
 
+    /* =======================
+        Circle with Icon
+    ===========================*/
     &__circle {
         //color: red;
         position: absolute;
@@ -53,6 +64,75 @@
                 content: '\f44b';
                 @include iconSettings();
             }
+        }
+    }
+
+    /* ====================================================
+    Task Specification (title,description,category,buttons)
+    ======================================================= */
+    &__specification {
+        /*         width: 90%;
+        background-color: black;
+        border-radius: .5rem;
+        padding: 1rem 1rem 1rem 1rem; */
+        cursor: pointer;
+    }
+
+    &__info {
+        padding-bottom: 1rem;
+
+        /* &--title {} */
+
+        &--description {
+            width: 100%;
+        }
+
+        &--category {
+            padding-bottom: 2rem;
+        }
+
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button {
+        cursor: pointer;
+        padding: .5rem;
+        width: 10rem;
+        border: 0;
+        border-radius: .5rem;
+        background-color: rgb(199, 191, 191);
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: orange;
+        }
+
+        &--delete {
+            background-color: red;
+
+            &::after {
+                content: '\f2ed';
+                font-weight: 900;
+                font-family: 'Font Awesome 5 Free';
+                color: white;
+            }
+        }
+
+        &--edit {
+            background-color: green;
+
+            &::after {
+                content: '\f044';
+                font-weight: 900;
+                font-family: 'Font Awesome 5 Free';
+                color: white;
+            }
+
         }
     }
 }
