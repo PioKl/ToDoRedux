@@ -23,11 +23,16 @@ const Task = ({ task, deleteTask, completeTask, editTask, saveEditTask }) => {
             {/* ze zmienionym sposobem mozna isEdited potem usunac */}
             {isEdited ? null : <li className="task__item">
                 <span className={`task__circle task__circle--${category} ${completed && "task__circle--completed"}`}></span>
-                <p style={{ textDecoration: completed ? "line-through" : "none" }} onClick={handleCheck}>{title}</p>
-                <p>{description}</p>
-                <p>{category}</p>
-                <button onClick={handleDelete}>X</button>
-                <button onClick={handleEditTask}>Edit</button>
+                <div onClick={handleCheck} className="task__specification">
+                    <p className="task__info task__info--title" style={{ textDecoration: completed ? "line-through" : "none" }} /* onClick={handleCheck} */>{title}</p>
+                    {description ? <p style={{ textDecoration: completed ? "line-through" : "none" }} className="task__info task__info--description">{description}</p> : null}
+                    <p style={{ textDecoration: completed ? "line-through" : "none" }} className="task__info task__info--category">{category}</p>
+                </div>
+                <div className="task__buttons">
+                    <button title="delete task" className="task__button task__button--delete" onClick={handleDelete}></button>
+                    <button title="edit task" className="task__button task__button--edit" onClick={handleEditTask}></button>
+                </div>
+
             </li>}
         </>
     );
