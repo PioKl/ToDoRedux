@@ -36,6 +36,7 @@ const AddTask = ({ addTask }) => {
     const scrollCheck = () => {
         //console.log(scroll)
         //console.log(window.scrollY)
+        //niepotrzebne z rozwiązaniem "scroll inside"
         const beginScroll = window.scrollY < 80;
         if (beginScroll === false) {
             setScroll(true);
