@@ -1,9 +1,14 @@
 @import '../style/App.scss';
 
-@mixin iconSettings {
+//Mixins and classes to extend
+
+@mixin iconStandardSettings {
     font-weight: 900;
     font-family: 'Font Awesome 5 Free';
     color: white;
+}
+
+.iconPositionSettings {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -11,6 +16,7 @@
 }
 
 .task {
+
     &__item {
         width: 90%;
         background-color: black;
@@ -40,7 +46,8 @@
         &--normal {
             &::after {
                 content: '\f328';
-                @include iconSettings();
+                @include iconStandardSettings();
+                @extend .iconPositionSettings;
             }
 
         }
@@ -48,21 +55,24 @@
         &--shopping {
             &::after {
                 content: '\f07a';
-                @include iconSettings();
+                @include iconStandardSettings();
+                @extend .iconPositionSettings;
             }
         }
 
         &--food {
             &::after {
                 content: '\f2e7';
-                @include iconSettings();
+                @include iconStandardSettings();
+                @extend .iconPositionSettings;
             }
         }
 
         &--training {
             &::after {
                 content: '\f44b';
-                @include iconSettings();
+                @include iconStandardSettings();
+                @extend .iconPositionSettings;
             }
         }
     }
@@ -128,9 +138,7 @@
 
             &::after {
                 content: '\f044';
-                font-weight: 900;
-                font-family: 'Font Awesome 5 Free';
-                color: white;
+                @include iconStandardSettings();
             }
 
         }
