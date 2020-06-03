@@ -23,7 +23,7 @@ const Task = ({ task, deleteTask, completeTask, editTask, saveEditTask }) => {
             {/* ze zmienionym sposobem mozna isEdited potem usunac */}
             {isEdited ? null : <li className="task__item">
                 <span className={`task__circle task__circle--${category} ${completed && "task__circle--completed"}`}></span>
-                <div onClick={handleCheck} className="task__specification">
+                <div title={`${completed ? "uncomplete task" : "complete task"}`} onClick={handleCheck} className="task__specification">
                     <p className="task__info task__info--title" style={{ textDecoration: completed ? "line-through" : "none" }} /* onClick={handleCheck} */>{title}</p>
                     {description ? <p style={{ textDecoration: completed ? "line-through" : "none" }} className="task__info task__info--description">{description}</p> : null}
                     <p style={{ textDecoration: completed ? "line-through" : "none" }} className="task__info task__info--category">{category}</p>
