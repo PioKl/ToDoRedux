@@ -3,6 +3,14 @@
 
     &__list {
         padding: 1rem 0 1rem 2rem;
+        /* =====================
+        scrolling inside tasks list (dla mobilnej, dla większej rozdzielczości jeszcze zobaczyć */
+        height: 70vh;
+        overflow: auto;
+        /*         scrollbar-color: black gray; //kolor scrollbaru
+        scrollbar-width: thin; */
+
+        /* ======================= */
 
         /*         :last-child {
             padding-bottom: 0
