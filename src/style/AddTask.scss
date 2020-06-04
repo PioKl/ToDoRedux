@@ -1,5 +1,105 @@
 @import '../style/App.scss';
 
+$commonPadding: 1rem;
+
+.addTask {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    /* ====================================
+         AddTask Heading
+    ======================================*/
+    &__heading {
+        @include headingAddEditSettings();
+    }
+
+    /* ====================================
+         AddTask Inputs/Textarea
+    ======================================*/
+    &__input {
+        @include inputAddEditSettings();
+
+        /*         &:required {
+            box-shadow: 0 0 3px rgb(0, 238, 255);
+        } */
+
+        /*         &:invalid {
+            box-shadow: 0 0 3px rgb(0, 238, 255) !important;
+        } */
+
+        /*         &:focus:required:invalid {
+            box-shadow: 0 0 3px red;
+        } */
+
+        /*         &:required:valid {
+            border: 2px solid black;
+        } */
+    }
+
+    /* =======================================
+         AddTask categories to choose buttons
+    ==========================================*/
+
+    &__categoriesButtons {
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 2rem;
+
+        :first-child {
+            margin-left: 0;
+        }
+
+        :last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__categoryButton {
+        @include buttonAddEditCategorySettings();
+
+        &--active {
+            @include activeCategory();
+        }
+    }
+
+    /* =======================================
+                AddTask finish buttons
+    ==========================================*/
+    &__finishButtons {
+        display: flex;
+        justify-content: center;
+
+        :first-child {
+            margin-right: 1rem;
+        }
+    }
+
+    &__finishButton {
+        @include submitFinishAddEditSettings();
+
+        &--submit {
+            background-color: green;
+
+            &:hover {
+                background-color: orange;
+            }
+        }
+
+        &--cancel {
+            background-color: red;
+
+            &:hover {
+                background-color: orange;
+            }
+        }
+    }
+}
+
+
+
+/* Create new task */
 .create-newTask {
     padding: 1rem 0 1rem 0;
 
