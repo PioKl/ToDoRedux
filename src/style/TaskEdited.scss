@@ -1,0 +1,57 @@
+@import '../style/App.scss';
+
+.editTask {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    /* ====================================
+         EditTask Heading
+    ======================================*/
+    &__heading {
+        @include headingAddEditSettings();
+    }
+
+    /* ====================================
+         EditTask Inputs/Textarea
+    ======================================*/
+    &__input {
+        @include inputAddEditSettings();
+    }
+
+    /* =======================================
+         EditTask categories to choose buttons
+    ==========================================*/
+
+    &__categoriesButtons {
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 2rem;
+
+        :first-child {
+            margin-left: 0;
+        }
+
+        :last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__categoryButton {
+        @include buttonAddEditCategorySettings();
+
+        &--active {
+            @include activeCategory();
+        }
+    }
+
+    &__save {
+        @include submitFinishAddEditSettings();
+        background-color: green;
+
+        &:hover {
+            background-color: orange;
+        }
+    }
+}
