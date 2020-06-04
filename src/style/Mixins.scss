@@ -1,0 +1,42 @@
+@mixin headingAddEditSettings {
+    font-size: 1.2rem;
+    padding: 1rem 0 1rem 0;
+}
+
+@mixin inputAddEditSettings {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    border: .1rem solid black;
+}
+
+/* @mixin buttonsAddEditCategorySettings {
+}
+ */
+@mixin buttonAddEditCategorySettings {
+    width: 10rem;
+    padding: 1rem;
+    margin: .5rem;
+    border: .1rem solid gray;
+    background-color: rgba(161, 148, 148, 0.103);
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: orangered;
+    }
+}
+
+@mixin submitFinishAddEditSettings {
+    width: 100%;
+    border: .1rem solid gray;
+    padding: 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    color: white;
+}
+
+@mixin activeCategory {
+    background-color: orangered;
+}
