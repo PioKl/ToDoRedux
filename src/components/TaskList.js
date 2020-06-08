@@ -26,7 +26,7 @@ const TaskList = ({ tasks }) => {
                         :
                         <ul className="tasks__list">
                             {tasks.map(task => (
-                                <div className="tasks__itemContainer" key={task.id}>
+                                <div className={`tasks__itemContainer ${task.completed && `tasks__itemContainer--completed`}`} key={task.id}>
                                     <Task key={task.id} task={task} />
                                 </div>
                             ))}
