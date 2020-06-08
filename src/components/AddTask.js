@@ -98,8 +98,12 @@ const AddTask = ({ addTask }) => {
                         </div>
                         :
                         <div className="create-newTask">
-                            <button title="Create New Task" className={`create-newTask__button ${scroll ? "create-newTask__button--scroll" : "create-newTask__button--standard"}`} onClick={handleCreateTask}>{scroll ? <i className="fas fa-plus create-newTask__button--plusIcon"></i> : "Create New Task"}</button>
-                        </div>}
+                            <button title="Create New Task" className="create-newTask__button create-newTask__button--scroll" onClick={handleCreateTask}><i className="fas fa-plus create-newTask__button--plusIcon"></i></button>
+                        </div>
+                        /*                         <div className="create-newTask">
+                                                    <button title="Create New Task" className={`create-newTask__button ${scroll ? "create-newTask__button--scroll" : "create-newTask__button--standard"}`} onClick={handleCreateTask}>{scroll ? <i className="fas fa-plus create-newTask__button--plusIcon"></i> : "Create New Task"}</button>
+                                                </div> */
+                    }
                     {/*                         <div className={scroll ? 'scroll' : null} onClick={() => { window.scrollTo(0, 0) }}>
                                 <i className={scroll ? "fas fa-arrow-up scroll__arrowUp" : null}></i>
                             </div> */}
