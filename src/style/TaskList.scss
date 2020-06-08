@@ -1,4 +1,8 @@
+@import '../style/App.scss';
+
 .tasks {
+    background-color: $backgroundSecondary; //#252e42
+    border-radius: 1rem;
     font-size: 1.4rem;
 
     &__list {
@@ -22,6 +26,20 @@
         padding-left: 3rem;
         padding-top: 2rem;
         padding-bottom: 3rem;
-        border-left: .1rem solid red;
+        //border-left: .3rem solid #965b6a;
+        border-left: .3rem solid grey;
+
+        //border-radius: 1rem;
+        &:first-child {
+            border-top-left-radius: 1rem;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 1rem;
+        }
+
+        /*         &--completed {
+            border-left-color: green;
+        } */
     }
 }
