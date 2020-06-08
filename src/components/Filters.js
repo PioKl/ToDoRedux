@@ -50,6 +50,7 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
             {/* {isEdited ? null :  */}
             <div className="filters" style={{ display: isEdited || isTaskCreated ? 'none' : 'inline' }}>
                 <div className="filters__search-filter">
+                    <i class="filters__search-icon fas fa-search"></i>
                     <input className="filters__search-input" type="text" value={search} onChange={handleSearch} />
                 </div>
                 <div className="filters__showing-filters">
