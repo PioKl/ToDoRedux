@@ -6,6 +6,17 @@ $darkSeaBlue: #2f4858;
 $darkSeaBlue2: #2f4858a1;
 $greyWithPurple: #595564;
 
+
+//paleta https://mycolor.space/?hex=%23212121&sub=1
+$backgroundPrimary: #212121; //#212121
+$backgroundSecondary: #3c3e42; //#3c3e42
+$backgroundDarkPurple: #523f4f;
+$backgroundLighterPurple: #5b4661;
+$orangeDark: #d6806e;
+$orangeLight: #fbb566;
+$greenLight: #00b38f;
+$greenDark: #007d5c;
+
 /* ===============
 Default properties
 ==================*/
@@ -28,7 +39,8 @@ html {
 }
 
 body {
-    background-color: rgba(0, 0, 0, 0.726);
+    //background-color: rgba(0, 0, 0, 0.726);
+    background-color: $backgroundPrimary;
     color: white;
     padding: .5rem;
 }
