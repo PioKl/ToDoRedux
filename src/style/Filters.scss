@@ -1,3 +1,5 @@
+@import '../style/App.scss';
+
 //moze #595564 zamiast rgb(121, 114, 114)
 //paleta https://mycolor.space/?hex=%23797272&sub=1
 /* Colors */
@@ -21,44 +23,98 @@ $greyWithPurple: #595564;
     /* ===========================
              FILTER SERACH
     ==============================*/
-    &__search-input {
-        width: 100%; //+
-        background-color: black; //+
-        border: .1rem solid rgb(121, 114, 114); //+
-        color: inherit;
+    &__search-filter {
+        display: flex;
+        //background-color: black;
+        //#0e1116
+        //#252e42
+        //background-image: linear-gradient(to bottom right, #0e1116, #252e42);
+        //background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(121, 121, 114));
+        //@include backgroundImageStandard();
+        background-color: $backgroundSecondary;
+        //border: .1rem solid rgb(121, 114, 114);
         padding: .2rem;
-        font-size: 1.4rem; //+
+        font-size: 1.4rem;
+        border-radius: .5rem;
+        margin: .2rem;
 
-        &:focus {
+        &:focus-within {
             border-color: #00c9c4;
-            //border-bottom: .2rem solid #00c9c4;
         }
     }
+
+    &__search-icon {
+        align-self: center;
+        padding-right: 1rem;
+        padding-left: .5rem;
+    }
+
+    &__search-input {
+        width: 100%; //+
+        background-color: inherit; //+
+        color: inherit;
+        border: 0;
+        //border: .1rem solid rgb(121, 114, 114); //+
+        //color: inherit;
+        //padding: .2rem;
+        //font-size: 1.4rem; //+
+
+        /*         &:focus {
+            border-color: #00c9c4;
+            //border-bottom: .2rem solid #00c9c4;
+        } */
+    }
+
+
 
     /* ===========================
              FILTER SHOW TASKS
     ==============================*/
 
     &__showing-filters {
-        padding: .2rem 0 .2rem 0;
+        margin: .5rem 0 .5rem 0;
         width: 100%;
         display: flex;
         justify-content: center;
+        //@include backgroundImageStandard();
+        //border-radius: .5rem;
     }
 
     &__showing-button {
         flex: 1 1 auto;
-        background-color: black;
+        //background-color: black;
+        //background-color: rgb(63, 59, 59);
+        //@include backgroundImageStandard();
+        //background-color: inherit;
+        background-color: $backgroundSecondary;
         color: inherit;
-        border: .1rem solid rgb(121, 114, 114);
+        //border: .1rem solid rgb(121, 114, 114);
+        border: 0;
+        border-radius: .5rem;
         padding: .2rem;
+        margin: .2rem;
         font-size: 1.4rem;
         cursor: pointer;
 
+        &:first-child {
+            border-top-left-radius: .5rem;
+            border-bottom-left-radius: .5rem;
+        }
+
+        &:last-child {
+            border-top-right-radius: .5rem;
+            border-bottom-right-radius: .5rem;
+        }
+
         &:disabled {
-            background-color: #2f4858;
-            color: white;
+            //background-color: #2f4858;
+            background-image: linear-gradient(to bottom right, $backgroundLighterPurple, $backgroundDarkPurple);
+            //color: white;
             font-weight: 700;
+        }
+
+        &:hover {
+            background-color: #965b6a;
         }
     }
 
@@ -68,18 +124,24 @@ $greyWithPurple: #595564;
     &__category-filters {
         text-align: center;
         font-size: 1.4rem;
-        border: .1rem solid rgb(121, 114, 114);
-        border-bottom: .15rem solid rgb(121, 114, 114);
+        //border: .1rem solid rgb(121, 114, 114);
+        //border-bottom: .15rem solid rgb(121, 114, 114);
+        border-radius: .5rem;
+        overflow: hidden; //zeby border-radius rowniez dzialal w category-item
+        margin: 0rem .2rem 0 .2rem;
         padding-top: .2rem;
         padding-bottom: .4rem;
         //margin-bottom: 1rem;
-        background-color: black;
+        //background-color: black;
+        //@include backgroundImageStandard();
+        background-color: $backgroundSecondary;
     }
 
     &__category-title {
         cursor: pointer;
         width: 100%;
-        background-color: black;
+        //background-color: black;
+        background-color: inherit;
         color: white;
         border: 0;
         font-size: inherit;
@@ -124,6 +186,8 @@ $greyWithPurple: #595564;
         justify-content: space-between;
         padding-top: .5rem;
         margin-bottom: -.4rem;
+        border-radius: .5rem;
+        //overflow: hidden; //zeby ten border-radius byl widoczny
 
         /*         :last-child {
             border-right: 0;
@@ -134,8 +198,10 @@ $greyWithPurple: #595564;
         flex: 1 1 auto;
         padding-top: .5rem;
         padding-bottom: .5rem;
+        //margin: 0 .2rem 0 .2rem;
         //background-color: orange;
-        background-color: black;
+        //background-color: black;
+        //@include backgroundImageStandard();
         border-top: .1rem solid rgb(121, 114, 114);
         cursor: pointer;
 
