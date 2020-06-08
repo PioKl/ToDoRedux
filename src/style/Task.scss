@@ -19,8 +19,11 @@
 
     &__item {
         width: 90%;
-        background-color: black;
+        //background-color: black;
+        background-image: linear-gradient(to bottom right, $backgroundLighterPurple, $backgroundDarkPurple);
         border-radius: .5rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
         padding: 1rem 1rem 1rem 1rem;
     }
 
@@ -35,12 +38,13 @@
         top: 25%;
         left: -1.6rem;
         transform: translateY(-25%);
-        background-color: red;
+        //background-color: rgb(218, 29, 29);
+        background-color: grey;
         border-radius: 10rem;
         text-align: center;
 
         &--completed {
-            background-color: green;
+            background-color: $greenDark;
         }
 
         &--normal {
@@ -123,7 +127,7 @@
         }
 
         &--delete {
-            background-color: red;
+            background-color: rgb(218, 29, 29);
 
             &::after {
                 content: '\f2ed';
@@ -134,7 +138,7 @@
         }
 
         &--edit {
-            background-color: green;
+            background-color: $greenDark;
 
             &::after {
                 content: '\f044';
