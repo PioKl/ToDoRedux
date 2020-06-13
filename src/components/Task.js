@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { deleteTask, completeTask, editTask } from "../actions/task.actions";
 import { EditContext } from '../contexts/EditContext';
 import "../style/Task.scss";
-const Task = ({ task, deleteTask, completeTask, editTask, saveEditTask }) => {
+const Task = ({ task, deleteTask, completeTask, editTask }) => {
     const { title, description, category, id, completed } = task;
     const { isEdited, setIsEdited } = useContext(EditContext);
     const handleCheck = () => {
@@ -23,6 +23,7 @@ const Task = ({ task, deleteTask, completeTask, editTask, saveEditTask }) => {
             {/* ze zmienionym sposobem mozna isEdited potem usunac */}
             {isEdited ? null : <li className="task__item">
                 <span className={`task__circle task__circle--${category} ${completed && "task__circle--completed"}`}></span>
+                <span className={`task__checked ${completed ? "task__checked--complete" : "task__checked--notComplete"}`}></span>
                 <div title={`${completed ? "uncomplete task" : "complete task"}`} onClick={handleCheck} className="task__specification">
                     <p className="task__info task__info--title" style={{ textDecoration: completed ? "line-through" : "none" }} /* onClick={handleCheck} */>{title}</p>
                     {description ? <p style={{ textDecoration: completed ? "line-through" : "none" }} className="task__info task__info--description">{description}</p> : null}
@@ -32,7 +33,6 @@ const Task = ({ task, deleteTask, completeTask, editTask, saveEditTask }) => {
                     <button title="delete task" className="task__button task__button--delete" onClick={handleDelete}></button>
                     <button title="edit task" className="task__button task__button--edit" onClick={handleEditTask}></button>
                 </div>
-
             </li>}
         </>
     );
