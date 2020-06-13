@@ -1,3 +1,7 @@
+@mixin transitionStandard {
+    transition: background-color .5s ease-in-out;
+}
+
 @mixin backgroundImageStandard {
     background-image: linear-gradient(to bottom right, $backgroundPrimary, $backgroundSecondary);
 }
@@ -5,6 +9,10 @@
 @mixin headingAddEditSettings {
     font-size: 1.2rem;
     padding: 1rem 0 1rem 0;
+
+    @media only screen and (min-width: $bp-medium) {
+        font-size: 1.4rem;
+    }
 }
 
 @mixin inputAddEditSettings {
@@ -15,6 +23,12 @@
     border: 0;
     background-image: linear-gradient(to bottom right, $backgroundLighterPurple, $backgroundDarkPurple);
     color: white;
+    font-family: inherit;
+    font-size: 1.3rem;
+
+    @media only screen and (min-width: $bp-medium) {
+        font-size: 1.4rem;
+    }
 }
 
 /* @mixin buttonsAddEditCategorySettings {
@@ -29,22 +43,39 @@
     border-radius: .5rem;
     color: white;
     cursor: pointer;
+    font-family: inherit;
+    font-size: 1.15rem;
+    @include transitionStandard();
+
+    @media only screen and (min-width: $bp-medium) {
+        font-size: 1.4rem;
+    }
 
     &:hover {
-        background-color: orangered;
+        background-color: rgb(218, 78, 27);
+        border: 0;
     }
 }
 
 @mixin submitFinishAddEditSettings {
     width: 100%;
-    border: .1rem solid gray;
+    //border: .1rem solid gray;
+    border: 0;
     padding: 1rem;
     border-radius: .5rem;
     cursor: pointer;
     color: white;
+    font-family: inherit;
+    font-size: 1.3rem;
+    @include transitionStandard();
+
+    @media only screen and (min-width: $bp-medium) {
+        font-size: 1.5rem;
+    }
 }
 
 @mixin activeCategory {
     background-color: rgb(218, 78, 27);
+    font-weight: 700;
     border: 0;
 }
