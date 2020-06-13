@@ -28,7 +28,7 @@ const Task = ({ task, saveEditTask }) => {
                 <h1 className="editTask__heading">Title</h1>
                 <input className="editTask__input editTask__input--title" type="text" placeholder={title} onChange={handleEditedTitle} defaultValue={title} name="" id="" />
                 <h1 className="editTask__heading">Description</h1>
-                <textarea className="editTask__input editTask__input--description" type="text" maxLength="50" rows="3" placeholder={description} defaultValue={description} onChange={(e) => setEditedDescription(e.target.value)} name="" id="" />
+                <textarea className="editTask__input editTask__input--description" maxLength="50" rows="3" placeholder={description} defaultValue={description} onChange={(e) => setEditedDescription(e.target.value)} name="" id="" />
                 {/*                 <input type="text" maxLength="50" size="50" placeholder={description} defaultValue={description} onChange={(e) => setEditedDescription(e.target.value)} name="" id="" /> */}
                 <h1 className="editTask__heading">Category</h1>
                 <div className="editTask__categoriesButtons">
