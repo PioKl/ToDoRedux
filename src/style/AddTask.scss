@@ -2,10 +2,21 @@
 
 $commonPadding: 1rem;
 
+.newTaskContainer {
+    background-color: $backgroundSecondary;
+    border-radius: 1rem;
+    height: 90vh;
+
+    /*     @media only screen and (min-width: $bp-medium) {
+        height: 90vh;
+    } */
+}
+
 .addTask {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    height: 100%;
 
     /* ====================================
          AddTask Heading
@@ -19,6 +30,7 @@ $commonPadding: 1rem;
     ======================================*/
     &__input {
         @include inputAddEditSettings();
+        margin: auto 0;
 
         /*         &:required {
             box-shadow: 0 0 3px rgb(0, 238, 255);
@@ -44,8 +56,9 @@ $commonPadding: 1rem;
     &__categoriesButtons {
         display: flex;
         justify-content: center;
-
         margin-bottom: 2rem;
+
+        margin: auto 0; //dodane nied
 
         :first-child {
             margin-left: 0;
@@ -70,6 +83,7 @@ $commonPadding: 1rem;
     &__finishButtons {
         display: flex;
         justify-content: center;
+        margin: auto 0; //dodane nied
 
         :first-child {
             margin-right: 1rem;
@@ -78,9 +92,13 @@ $commonPadding: 1rem;
 
     &__finishButton {
         @include submitFinishAddEditSettings();
+        margin: auto 0;
+        display: grid;
+        align-self: center;
+        width: 20.9rem;
 
         &--submit {
-            background-color: green;
+            background-color: $greenDark;
 
             &:hover {
                 background-color: orange;
@@ -88,7 +106,7 @@ $commonPadding: 1rem;
         }
 
         &--cancel {
-            background-color: red;
+            background-color: #da1d1d;
 
             &:hover {
                 background-color: orange;
@@ -100,16 +118,22 @@ $commonPadding: 1rem;
 
 
 /* Create new task */
-.create-newTask {
+/* .create-newTask {
     padding: 1rem 0 1rem 0;
 
     &__button {
         width: 100%;
         color: white;
-        background-color: $darkSeaBlue; //rgb(228, 68, 68)
-        border: .1rem solid $standardGrey;
+        //background-color: $darkSeaBlue; //rgb(228, 68, 68)
+        background-color: $greenDark;
+        //border: .1rem solid $standardGrey;
+        border: 0;
         font-weight: 700;
         cursor: pointer;
+
+        &:hover {
+            background-color: rgb(218, 78, 27);
+        }
 
         &--standard {
             padding: .5rem;
@@ -126,11 +150,11 @@ $commonPadding: 1rem;
 
         &--scroll {
             position: fixed;
-            width: 6rem;
-            height: 6rem;
+            width: 5rem;
+            height: 5rem;
             border-radius: 10rem;
             left: 75%;
-            top: 88.5%;
+            top: 90%;
             z-index: 1;
         }
 
@@ -138,4 +162,4 @@ $commonPadding: 1rem;
             font-size: 4rem;
         }
     }
-}
+} */
