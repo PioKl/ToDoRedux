@@ -11,12 +11,12 @@ $darkSeaBlue2: #2f4858a1;
 $greyWithPurple: #595564;
 
 
-@mixin buttonInputCommonSettings {
+/* @mixin buttonInputCommonSettings {
     width: 100%;
     background-color: black;
     border: .1rem solid rgb(121, 114, 114);
     font-size: 1.4rem; //+
-}
+} */
 
 /* main {
     height: 70vh;
@@ -219,6 +219,11 @@ $greyWithPurple: #595564;
         //@include backgroundImageStandard();
         border-top: .1rem solid rgb(121, 114, 114);
         cursor: pointer;
+        font-size: 1.2rem;
+
+        @media only screen and (min-width: $bp-medium) {
+            font-size: 1.4rem;
+        }
 
         //border-right: .19rem dashed red;
         &:hover {
