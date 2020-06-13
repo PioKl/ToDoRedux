@@ -5,20 +5,22 @@ import TaskList from './TaskList';
 import Filters from './Filters';
 import EditContextProvider from '../contexts/EditContext';
 import CreateTaskContextProvider from '../contexts/CreateTaskContext';
+import Footer from "./Footer";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="header">
       </header>
-      <main>
-        <CreateTaskContextProvider>
-          <EditContextProvider>
+      <CreateTaskContextProvider>
+        <EditContextProvider>
+          <main>
             <Filters />
             <AddTask />
             <TaskList />
-          </EditContextProvider>
-        </CreateTaskContextProvider>
-      </main>
+          </main>
+          <Footer />
+        </EditContextProvider>
+      </CreateTaskContextProvider>
     </div>
   );
 }
