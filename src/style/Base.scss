@@ -12,16 +12,31 @@ $backgroundPrimary: #212121; //#212121
 $backgroundSecondary: #3c3e42; //#3c3e42
 $backgroundDarkPurple: #523f4f;
 $backgroundLighterPurple: #5b4661;
+$purpleLight:#965b6a;
 $orangeDark: #d6806e;
 $orangeLight: #fbb566;
 $greenLight: #00b38f;
 $greenDark: #007d5c;
 
+/* ==================
+    Break Points 
+====================*/
+/* $bp-largest: 75em; // 1200px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px */
+
+
 /* ===============
 Default properties
 ==================*/
+$bp-medium: 48em;
 
-$medium : 64.81em; //1037px
+//$medium : 64.81em; //1037px
+
+$widthConstOne: 36rem;
+$sharedValueOne: 3rem;
 
 *,
 *::before,
@@ -43,4 +58,5 @@ body {
     background-color: $backgroundPrimary;
     color: white;
     padding: .5rem;
+    font-family: 'Merriweather', serif;
 }
