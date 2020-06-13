@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { connect } from "react-redux";
 import { addTask } from "../actions/task.actions";
 import { EditContext } from '../contexts/EditContext';
@@ -10,16 +10,16 @@ const AddTask = ({ addTask }) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState("normal");
-    const [scroll, setScroll] = useState(false);
+    /* const [scroll, setScroll] = useState(false); */
     const { isEdited } = useContext(EditContext);
     const { isTaskCreated, setIsTaskCreated } = useContext(CreateTaskContext);
 
     const handleTitle = (e) => {
         setTitle(e.target.value);
     }
-    const handleCreateTask = (e) => {
-        setIsTaskCreated(true);
-    }
+    /*     const handleCreateTask = (e) => {
+            setIsTaskCreated(true);
+        } */
     const handleAddTask = (e) => {
         e.preventDefault();
         if (title !== "") {
@@ -33,23 +33,23 @@ const AddTask = ({ addTask }) => {
         setIsTaskCreated(false);
     }
 
-    const scrollCheck = () => {
-        //console.log(scroll)
-        //console.log(window.scrollY)
-        //niepotrzebne z rozwiązaniem "scroll inside"
-        const beginScroll = window.scrollY < 80;
-        if (beginScroll === false) {
-            setScroll(true);
-        } else {
-            setScroll(false);
+    /*     const scrollCheck = () => {
+            //console.log(scroll)
+            //console.log(window.scrollY)
+            //niepotrzebne z rozwiązaniem "scroll inside"
+            const beginScroll = window.scrollY < 80;
+            if (beginScroll === false) {
+                setScroll(true);
+            } else {
+                setScroll(false);
+            }
         }
-    }
-    useEffect(() => {
-        window.addEventListener('scroll', scrollCheck, false);
-        return () => {
-            window.removeEventListener("scroll", scrollCheck, false);
-        };
-    });
+        useEffect(() => {
+            window.addEventListener('scroll', scrollCheck, false);
+            return () => {
+                window.removeEventListener("scroll", scrollCheck, false);
+            };
+        }); */
     return (
         <>
             {isEdited ? null :
@@ -97,9 +97,9 @@ const AddTask = ({ addTask }) => {
                             </form>
                         </div>
                         :
-                        <div className="create-newTask">
+/*                         <div className="create-newTask">
                             <button title="Create New Task" className="create-newTask__button create-newTask__button--scroll" onClick={handleCreateTask}><i className="fas fa-plus create-newTask__button--plusIcon"></i></button>
-                        </div>
+                        </div> */ null
                         /*                         <div className="create-newTask">
                                                     <button title="Create New Task" className={`create-newTask__button ${scroll ? "create-newTask__button--scroll" : "create-newTask__button--standard"}`} onClick={handleCreateTask}>{scroll ? <i className="fas fa-plus create-newTask__button--plusIcon"></i> : "Create New Task"}</button>
                                                 </div> */
