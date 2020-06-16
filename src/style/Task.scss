@@ -18,9 +18,7 @@
 .task {
 
     &__item {
-        //position: relative;
         width: 90%;
-        //background-color: black;
         background-image: linear-gradient(to bottom right, $backgroundLighterPurple, $backgroundDarkPurple);
         border-radius: .5rem;
         border-top-right-radius: 2rem;
@@ -30,25 +28,21 @@
         margin: 0 auto;
         max-width: $widthConstOne;
 
-        /*         @media only screen and (min-width: $bp-medium) {
-            //max-width: 50%;
-        } */
+        &:hover {
+            box-shadow: 0 0 .3rem .2rem $standardGrey;
+        }
     }
 
     /* =======================
         Circle with Icon
     ===========================*/
     &__circle {
-        //color: red;
         position: absolute;
         width: 3rem;
         height: 3rem;
         top: 25%;
         left: -1.6rem;
-        //top: 25%;
-        //left: -16%;
         transform: translateY(-25%);
-        //background-color: rgb(218, 29, 29);
         background-color: grey;
         border-radius: 10rem;
         text-align: center;
@@ -97,31 +91,12 @@
 
     &__checked {
         position: relative;
-        //background-color: #da1d1d;
         border-radius: 50%;
-        /* width: 2.5rem;
-        height: 2.5rem; */
-        /*         left: 80%;
-        top: 13%; */
-        /*         left: 95%;
-        top: 1.1rem; */
-        //left: 90%;
-        //text-align: center;
 
-        /*         display: flex;
-        justify-content: center;
-        align-items: center;
- */
         &--complete {
             &::after {
                 content: '\f00c';
                 @include iconStandardSettings();
-                /*                 @extend .iconPositionSettings;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 2.5rem;
-                height: 2.5rem; */
                 border-radius: 50%;
                 background-color: $greenDark;
                 padding: 0.6rem 0.6rem;
@@ -136,13 +111,7 @@
             &::after {
                 content: '\f00d';
                 @include iconStandardSettings();
-                //@extend .iconPositionSettings;
-                /*                 display: flex;
-                justify-content: center;
-                align-items: center; */
-                /* width: 2.5rem;
-                height: 2.5rem; */
-                background-color: #da1d1d;
+                background-color: $red;
                 border-radius: 50%;
                 padding: .6rem .8rem;
                 position: relative;
@@ -158,17 +127,11 @@
     Task Specification (title,description,category,buttons)
     ======================================================= */
     &__specification {
-        /*         width: 90%;
-        background-color: black;
-        border-radius: .5rem;
-        padding: 1rem 1rem 1rem 1rem; */
         cursor: pointer;
     }
 
     &__info {
         padding-bottom: 1rem;
-
-        /* &--title {} */
 
         &--description {
             width: 100%;
@@ -192,7 +155,6 @@
         width: 10rem;
         border: 0;
         border-radius: .5rem;
-        background-color: rgb(199, 191, 191);
 
         &:hover,
         &:active,
@@ -201,7 +163,7 @@
         }
 
         &--delete {
-            background-color: rgb(218, 29, 29);
+            background-color: $red;
             @include transitionStandard();
 
             &::after {

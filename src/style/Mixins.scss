@@ -19,7 +19,6 @@
     padding: 1rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
-    //border: .1rem solid black;
     border: 0;
     background-image: linear-gradient(to bottom right, $backgroundLighterPurple, $backgroundDarkPurple);
     color: white;
@@ -31,9 +30,6 @@
     }
 }
 
-/* @mixin buttonsAddEditCategorySettings {
-}
- */
 @mixin buttonAddEditCategorySettings {
     width: 10rem;
     padding: 1rem;
@@ -52,14 +48,13 @@
     }
 
     &:hover {
-        background-color: rgb(218, 78, 27);
+        background-color: $orangeDark;
         border: 0;
     }
 }
 
 @mixin submitFinishAddEditSettings {
     width: 100%;
-    //border: .1rem solid gray;
     border: 0;
     padding: 1rem;
     border-radius: .5rem;
@@ -75,7 +70,7 @@
 }
 
 @mixin activeCategory {
-    background-color: rgb(218, 78, 27);
+    background-color: $orangeDark;
     font-weight: 700;
     border: 0;
 }

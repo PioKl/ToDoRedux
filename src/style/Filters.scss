@@ -1,46 +1,13 @@
 @import '../style/App.scss';
 
-//moze #595564 zamiast rgb(121, 114, 114)
-//paleta https://mycolor.space/?hex=%23797272&sub=1
-/* Colors */
-$standardGrey: rgb(121, 114, 114);
-$cyanOne: #00c9c4;
-$cyanTwo: rgb(3, 255, 255);
-$darkSeaBlue: #2f4858;
-$darkSeaBlue2: #2f4858a1;
-$greyWithPurple: #595564;
-
-
-/* @mixin buttonInputCommonSettings {
-    width: 100%;
-    background-color: black;
-    border: .1rem solid rgb(121, 114, 114);
-    font-size: 1.4rem; //+
-} */
-
-/* main {
-    height: 70vh;
-    width: 100%;
-}
- */
 .filters {
-    /*     height: 15vh;
-    width: 100%; */
-    //width: 100%;
 
     /* ===========================
              FILTER SERACH
     ==============================*/
     &__search-filter {
         display: flex;
-        //background-color: black;
-        //#0e1116
-        //#252e42
-        //background-image: linear-gradient(to bottom right, #0e1116, #252e42);
-        //background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(121, 121, 114));
-        //@include backgroundImageStandard();
         background-color: $backgroundSecondary;
-        //border: .1rem solid rgb(121, 114, 114);
         padding: .2rem;
         font-size: 1.4rem;
         border-radius: .5rem;
@@ -48,9 +15,7 @@ $greyWithPurple: #595564;
         margin: .2rem;
 
         &:focus-within {
-            //border: .1rem solid $purpleLight;
             border-color: $purpleLight;
-            //border-color: #00c9c4;
         }
     }
 
@@ -61,20 +26,11 @@ $greyWithPurple: #595564;
     }
 
     &__search-input {
-        width: 100%; //+
-        background-color: inherit; //+
+        width: 100%;
+        background-color: inherit;
         color: inherit;
         border: 0;
         font-family: inherit;
-        //border: .1rem solid rgb(121, 114, 114); //+
-        //color: inherit;
-        //padding: .2rem;
-        //font-size: 1.4rem; //+
-
-        /*         &:focus {
-            border-color: #00c9c4;
-            //border-bottom: .2rem solid #00c9c4;
-        } */
     }
 
 
@@ -88,19 +44,12 @@ $greyWithPurple: #595564;
         width: 100%;
         display: flex;
         justify-content: center;
-        //@include backgroundImageStandard();
-        //border-radius: .5rem;
     }
 
     &__showing-button {
         flex: 1 1 auto;
-        //background-color: black;
-        //background-color: rgb(63, 59, 59);
-        //@include backgroundImageStandard();
-        //background-color: inherit;
         background-color: $backgroundSecondary;
         color: inherit;
-        //border: .1rem solid rgb(121, 114, 114);
         border: 0;
         border-radius: .5rem;
         padding: .2rem;
@@ -121,9 +70,7 @@ $greyWithPurple: #595564;
         }
 
         &:disabled {
-            //background-color: #2f4858;
             background-image: linear-gradient(to bottom right, $backgroundLighterPurple, $backgroundDarkPurple);
-            //color: white;
             font-weight: 700;
         }
 
@@ -138,23 +85,17 @@ $greyWithPurple: #595564;
     &__category-filters {
         text-align: center;
         font-size: 1.4rem;
-        //border: .1rem solid rgb(121, 114, 114);
-        //border-bottom: .15rem solid rgb(121, 114, 114);
         border-radius: .5rem;
         overflow: hidden; //zeby border-radius rowniez dzialal w category-item
         margin: 0rem .2rem 2rem .2rem;
         padding-top: .2rem;
         padding-bottom: .4rem;
-        //margin-bottom: 1rem;
-        //background-color: black;
-        //@include backgroundImageStandard();
         background-color: $backgroundSecondary;
     }
 
     &__category-title {
         cursor: pointer;
         width: 100%;
-        //background-color: black;
         background-color: inherit;
         color: white;
         border: 0;
@@ -170,7 +111,6 @@ $greyWithPurple: #595564;
                 font-family: 'Font Awesome 5 Free';
                 position: relative;
                 left: 5%;
-                //padding-left: 1rem;
             }
         }
 
@@ -181,17 +121,8 @@ $greyWithPurple: #595564;
                 font-family: 'Font Awesome 5 Free';
                 position: relative;
                 left: 5%;
-                //padding-left: 1rem;
             }
         }
-
-        /* background-color: black;
-        border: 0;
-        color: inherit;
-
-        &:focus {
-            font-weight: 700;
-        } */
     }
 
     &__category-list {
@@ -202,22 +133,13 @@ $greyWithPurple: #595564;
         padding-top: .5rem;
         margin-bottom: -.4rem;
         border-radius: .5rem;
-        //overflow: hidden; //zeby ten border-radius byl widoczny
-
-        /*         :last-child {
-            border-right: 0;
-        } */
     }
 
     &__category-item {
         flex: 1 1 auto;
         padding-top: .5rem;
         padding-bottom: .5rem;
-        //margin: 0 .2rem 0 .2rem;
-        //background-color: orange;
-        //background-color: black;
-        //@include backgroundImageStandard();
-        border-top: .1rem solid rgb(121, 114, 114);
+        border-top: .1rem solid $standardGrey;
         cursor: pointer;
         font-size: 1.2rem;
 
@@ -225,9 +147,7 @@ $greyWithPurple: #595564;
             font-size: 1.4rem;
         }
 
-        //border-right: .19rem dashed red;
         &:hover {
-            //background-color: #2f4858a1;
             background-color: $purpleLight;
             font-weight: 700;
         }
@@ -238,25 +158,7 @@ $greyWithPurple: #595564;
 Choose/Show Category Filters
 =================================*/
 .active {
-    //color: red;
     font-weight: 700;
-    //background-color: #2f4858;
     background-image: linear-gradient(to bottom right, $backgroundLighterPurple, $backgroundDarkPurple);
     border-bottom: .2rem solid $purpleLight;
-    //border-bottom: .2rem solid rgb(3, 255, 255); //lub #00c9c4
 }
-
-/* .filters__category-filters {
-    text-align: center;
-}
-
-.filters__category-list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.filters__category-item {
-    flex: 1 1 auto;
-} */

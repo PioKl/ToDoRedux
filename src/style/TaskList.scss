@@ -1,29 +1,19 @@
 @import '../style/App.scss';
 
 .tasks {
-    background-color: $backgroundSecondary; //#252e42
+    background-color: $backgroundSecondary;
     border-radius: 1rem;
     font-size: 1.4rem;
-    //margin-top: 2rem; //zalezne ss
     overflow: hidden;
-    /*  height: 60vh;
-    overflow: auto; */
 
     &__list {
         padding: 1rem 0 1rem 2rem;
         /* =====================
-        scrolling inside tasks list (dla mobilnej, dla większej rozdzielczości jeszcze zobaczyć */
-        //height: 70vh;
+        scrolling inside tasks list*/
         height: 60vh;
         overflow: auto;
         /*         scrollbar-color: black gray; //kolor scrollbaru
         scrollbar-width: thin; */
-
-        /* ======================= */
-
-        /*         :last-child {
-            padding-bottom: 0
-        } */
     }
 
     &__itemContainer {
@@ -31,10 +21,8 @@
         padding-left: $sharedValueOne;
         padding-top: 2rem;
         padding-bottom: 3rem;
-        //border-left: .3rem solid #965b6a;
         border-left: .3rem solid grey;
 
-        //border-radius: 1rem;
         &:first-child {
             border-top-left-radius: 1rem;
         }
@@ -43,9 +31,5 @@
             border-bottom-left-radius: 1rem;
             margin-bottom: 1rem;
         }
-
-        /*    &--completed {
-            border-left-color: $greenDark;
-        } */
     }
 }
