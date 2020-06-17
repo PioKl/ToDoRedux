@@ -58,9 +58,9 @@ const AddTask = ({ addTask }) => {
                         <div className="newTaskContainer">
                             <form className="addTask" onSubmit={handleAddTask}>
                                 <h1 className="addTask__heading">Title</h1>
-                                <input className="addTask__input addTask__input--title" type="text" placeholder="title" value={title} onChange={handleTitle} required name="" id="" />
+                                <input className="addTask__input addTask__input--title" type="text" placeholder="title" value={title.slice(0, 20)} onChange={handleTitle} required name="" id="" />
                                 <h1 className="addTask__heading">Description</h1>
-                                <textarea className="addTask__input addTask__input--description" type="text" maxLength="50" rows="3" placeholder="description" value={description} onChange={(e) => setDescription(e.target.value)} name="" id="" />
+                                <textarea className="addTask__input addTask__input--description" type="text" maxLength="50" rows="3" placeholder="description" value={description.slice(0, 50)} onChange={(e) => setDescription(e.target.value)} name="" id="" />
                                 {/*                                 <input className="addTask__input addTask__input--description" type="text" maxLength="50" size="50" placeholder="description" value={description} onChange={(e) => setDescription(e.target.value)} name="" id="" /> */}
                                 <h1 className="addTask__heading">Category</h1>
                                 <div className="addTask__categoriesButtons">
