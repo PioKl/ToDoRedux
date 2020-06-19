@@ -5,7 +5,7 @@ import { EditContext } from '../contexts/EditContext';
 import "../style/Task.scss";
 const Task = ({ task, deleteTask, completeTask, editTask }) => {
     const { title, description, category, id, completed } = task;
-    const { isEdited, setIsEdited } = useContext(EditContext);
+    const { setIsEdited } = useContext(EditContext);
     const handleCheck = () => {
         completeTask(id)
     }
@@ -19,13 +19,11 @@ const Task = ({ task, deleteTask, completeTask, editTask }) => {
 
     return (
         <>
-            {/* return state.map((task) => task.id === action.id ? { ...task, edited: false } : {...task, edited: false})  isEdited jest po to, zeby nie wyswietlilo pozostalych taskow do edytowania, bo ...task, edited: false spowoduje, ze wyskoczy task do edytowania oraz lista ponizszych, czyli rowniez te, ktorych edytowac nie chcę, isEdited zapobiega temu*/}
-            {/* ze zmienionym sposobem mozna isEdited potem usunac */}
-            {isEdited ? null : <li className="task__item">
+            <li className="task__item">
                 <span className={`task__circle task__circle--${category} ${completed && "task__circle--completed"}`}></span>
                 <span className={`task__checked ${completed ? "task__checked--complete" : "task__checked--notComplete"}`}></span>
                 <div title={`${completed ? "uncomplete task" : "complete task"}`} onClick={handleCheck} className="task__specification">
-                    <p className="task__info task__info--title" style={{ textDecoration: completed ? "line-through" : "none" }} /* onClick={handleCheck} */>{title}</p>
+                    <p className="task__info task__info--title" style={{ textDecoration: completed ? "line-through" : "none" }} >{title}</p>
                     {description ? <p style={{ textDecoration: completed ? "line-through" : "none" }} className="task__info task__info--description">{description}</p> : null}
                     <p style={{ textDecoration: completed ? "line-through" : "none" }} className="task__info task__info--category">{category}</p>
                 </div>
@@ -33,7 +31,7 @@ const Task = ({ task, deleteTask, completeTask, editTask }) => {
                     <button title="delete task" className="task__button task__button--delete" onClick={handleDelete}></button>
                     <button title="edit task" className="task__button task__button--edit" onClick={handleEditTask}></button>
                 </div>
-            </li>}
+            </li>
         </>
     );
 }
