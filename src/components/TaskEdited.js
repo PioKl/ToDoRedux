@@ -26,10 +26,9 @@ const Task = ({ task, saveEditTask }) => {
         <div className="editTaskContainer">
             <form className="editTask" onSubmit={handleSaveEditedTask}>
                 <h1 className="editTask__heading">Title</h1>
-                <input className="editTask__input editTask__input--title" maxLength="20" type="text" placeholder={title} onChange={handleEditedTitle} defaultValue={title.slice(0, 20)} name="" id="" />
+                <input className="editTask__input editTask__input--title" maxLength="20" type="text" placeholder={title} onChange={handleEditedTitle} defaultValue={title.slice(0, 20)} />
                 <h1 className="editTask__heading">Description</h1>
-                <textarea className="editTask__input editTask__input--description" maxLength="50" rows="3" placeholder={description} defaultValue={description} onChange={(e) => setEditedDescription(e.target.value.slice(0, 50))} name="" id="" />
-                {/*                 <input type="text" maxLength="50" size="50" placeholder={description} defaultValue={description} onChange={(e) => setEditedDescription(e.target.value)} name="" id="" /> */}
+                <textarea className="editTask__input editTask__input--description" maxLength="50" rows="3" placeholder={description} defaultValue={description} onChange={(e) => setEditedDescription(e.target.value.slice(0, 50))} />
                 <h1 className="editTask__heading">Category</h1>
                 <div className="editTask__categoriesButtons">
                     <button
@@ -51,14 +50,6 @@ const Task = ({ task, saveEditTask }) => {
                         onClick={(e) => { e.preventDefault(); setEditedCategory(e.target.value) }}
                         value="training" title="Training">Training</button>
                 </div>
-
-                {/*                 <select defaultValue={category} id="categories">
-                    <option onClick={(e) => setEditedCategory(e.target.value)} value="normal" >Normal</option>
-                    <option onClick={(e) => setEditedCategory(e.target.value)} value="shopping">Shopping</option>
-                    <option onClick={(e) => setEditedCategory(e.target.value)} value="food">Food</option>
-                    <option onClick={(e) => setEditedCategory(e.target.value)} value="training">Training</option>
-                </select>
-                <input className="editTask__save" title="Save" type="submit" value="Save" /> */}
                 <button className="editTask__save" title="Save" type="submit" value="Save">Save</button>
             </form>
         </div>

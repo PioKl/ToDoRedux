@@ -8,7 +8,6 @@ import { CreateTaskContext } from '../contexts/CreateTaskContext';
 import "../style/Filters.scss";
 const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, filters, searchTask }) => {
 
-    //const allCategories = "allCategories";
     const [categoryToFilter, setCategoryToFilter] = useState("allCategories");
     const [search, setSearch] = useState('')
     const { isEdited } = useContext(EditContext);
@@ -30,8 +29,6 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
     }
 
     const handleCategory = (e) => {
-        //console.log(e.currentTarget.getAttribute("value"))
-        //setCategoryToFilter(e.target.value);
         setCategoryToFilter(e.currentTarget.getAttribute("value"));
         setShowCategoryFilters(false);
     }
@@ -47,7 +44,6 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
 
     return (
         <>
-            {/* {isEdited ? null :  */}
             <div className="filters" style={{ display: isEdited || isTaskCreated ? 'none' : 'inline' }}>
                 <div className="filters__search-filter">
                     <i className="filters__search-icon fas fa-search"></i>
@@ -58,15 +54,7 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
                     <button className="filters__showing-button filters__showing-button--showNotCompleted" value="SHOW_NOTCOMPLETED" disabled={filters === "SHOW_NOTCOMPLETED" ? true : false} onClick={handleNotCompleted}>Not Completed</button>
                     <button className="filters__showing-button filters__showing-button--showCompleted" value="SHOW_COMPLETED" disabled={filters === "SHOW_COMPLETED" ? true : false} onClick={handleCompleted}>Completed</button>
                 </div>
-                {/* <div className="filters__category-filters">
-                    <select className="check" defaultValue="allCategories" id="categories">
-                        <option onClick={handleCategory} value="allCategories">All Categories</option>
-                        <option onClick={handleCategory} value="normal">Normal</option>
-                        <option onClick={handleCategory} value="shopping">Shopping</option>
-                        <option onClick={handleCategory} value="food">Food</option>
-                        <option onClick={handleCategory} value="training">Training</option>
-                    </select>
-                </div> */}
+
                 <div className="filters__category-filters">
                     <button className={`filters__category-title ${showCategoryFilters ? "filters__category-title--active" : "filters__category-title--inActive"}`} onClick={handleOpenCategoriesFilter}>Show Categories: {categoryToFilter === "allCategories" ? "All Categories" : categoryToFilter[0].toUpperCase() + categoryToFilter.slice(1)}</button>
                     <ul style={{ display: showCategoryFilters ? 'flex' : 'none' }} className="filters__category-list">
@@ -82,7 +70,7 @@ const Filters = ({ showAll, showCompleted, showNotCompleted, showByCategory, fil
                         ${categoryToFilter === "training" ? "active" : "non-active"}`} value="training">Training</li>
                     </ul>
                 </div>
-            </div>{/* } */}
+            </div>
 
         </>
     );

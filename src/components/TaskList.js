@@ -34,22 +34,6 @@ const TaskList = ({ tasks }) => {
                     }
                 </div>
             }
-
-            {/*             {isTaskCreated ? null :
-                <div className="tasks">
-                    <ul className="tasks__list">
-                        {tasks.map(task => (
-                            <div className={isEdited ? "tasks_itemEditContainer" : "tasks__itemContainer"} key={task.id}> */}
-            {/* isEdited jest po to aby zlikwidowac problem pojawienia sie razem panelu zapisu i tasków, wówczas gdy użytkownik będąc w panelu edycji odświeży stronę, a nie wykorzysta opcji zapisz */}
-            {/*                                 {task.edited && isEdited ?
-                                    <TaskEdited key={task.id} task={task} />
-                                    :
-                                    <Task key={task.id} task={task} />} */}
-            {/*                             </div>
-                        ))}
-                    </ul>
-                </div>
-            } */}
         </>
     );
 }
