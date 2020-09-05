@@ -1,6 +1,6 @@
 https://piokl.github.io/ToDoRedux/
 
-ToDo lista (CRUD) utworzona przede wszystkim za pomocą Reduxa, ale również zostało wykorzystane Context API, a także Hooksy.
+ToDo lista (CRUD) utworzona przede wszystkim za pomocą Reduxa, ale również zostało wykorzystane Context API, a także Hooksy oraz localstorage, w celu zapisaniu zmian wprowadzonych w aplikacji mimo odświeżenia strony.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
